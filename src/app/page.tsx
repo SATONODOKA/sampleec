@@ -26,6 +26,9 @@ export default function HomePage() {
   // 初回ロード時とページに戻った時に商品リストを更新
   useEffect(() => {
     const loadProducts = () => {
+      // サーバーサイドレンダリング時のエラーを防ぐ
+      if (typeof window === 'undefined') return;
+      
       const storedProducts = JSON.parse(localStorage.getItem('userProducts') || '[]');
       const allProducts = [...mockProducts, ...storedProducts];
       // 重複削除

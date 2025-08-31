@@ -13,6 +13,9 @@ export default function OrdersPage() {
   // 初回ロード時とページに戻った時に発注リストを更新
   useEffect(() => {
     const loadOrders = () => {
+      // サーバーサイドレンダリング時のエラーを防ぐ
+      if (typeof window === 'undefined') return;
+      
       const storedOrders = JSON.parse(localStorage.getItem('userOrders') || '[]');
       const allOrders = [...mockOrdersInProgress, ...storedOrders];
       // 重複削除（IDベース）
@@ -38,9 +41,11 @@ export default function OrdersPage() {
     setOrdersInProgress(updatedOrders);
     
     // localStorageからも削除
-    const storedOrders = JSON.parse(localStorage.getItem('userOrders') || '[]');
-    const updatedStoredOrders = storedOrders.filter((order: OrderInProgress) => order.id !== orderId);
-    localStorage.setItem('userOrders', JSON.stringify(updatedStoredOrders));
+    if (typeof window !== 'undefined') {
+      const storedOrders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+      const updatedStoredOrders = storedOrders.filter((order: OrderInProgress) => order.id !== orderId);
+      localStorage.setItem('userOrders', JSON.stringify(updatedStoredOrders));
+    }
     
     alert('発注をキャンセルしました。');
   };

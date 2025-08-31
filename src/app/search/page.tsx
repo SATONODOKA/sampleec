@@ -79,6 +79,9 @@ export default function SearchPage() {
     console.log('発注確定:', { productId, quantity, expectedDate });
     
     if (productToOrder) {
+      // サーバーサイドレンダリング時のエラーを防ぐ
+      if (typeof window === 'undefined') return;
+      
       // localStorage から既存の商品リストを取得
       const existingProducts = JSON.parse(localStorage.getItem('userProducts') || '[]');
       
