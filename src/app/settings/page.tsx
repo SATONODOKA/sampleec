@@ -31,10 +31,10 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold text-gray-900 mb-8">設定</h1>
+    <div className="w-full h-full flex flex-col">
+              <h1 className="text-xl font-bold text-gray-900 mb-6">設定</h1>
       
-      <div className="space-y-8">
+              <div className="space-y-6">
         <ProfileSection 
           profile={storeProfile} 
           onUpdate={handleProfileUpdate} 

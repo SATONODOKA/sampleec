@@ -15,11 +15,14 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <div className="flex min-h-screen bg-gray-light">
-          <Sidebar />
-          <main className="flex-1 md:ml-64 p-4 md:p-6 mobile-main">
-            {children}
-          </main>
+        <div className="min-h-screen bg-gray-300 flex items-center justify-center p-4">
+          {/* モバイル風コンテナ */}
+          <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden h-[800px] flex flex-col">
+            <main className="flex-1 p-4 overflow-y-auto">
+              {children}
+            </main>
+            <Sidebar />
+          </div>
         </div>
       </body>
     </html>

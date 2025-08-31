@@ -7,6 +7,7 @@ export interface Product {
   purchaseCount: number;
   conversionRate: number;
   purchaseRate: number;
+  commission: number; // 手数料（円）
   targetDemographics: string;
 }
 

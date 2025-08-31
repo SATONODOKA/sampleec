@@ -2,9 +2,10 @@ import type { EarningSummary } from '@/types';
 
 interface EarningSummaryProps {
   summary: EarningSummary;
+  onShowDetails: () => void;
 }
 
-export default function EarningSummary({ summary }: EarningSummaryProps) {
+export default function EarningSummary({ summary, onShowDetails }: EarningSummaryProps) {
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('ja-JP', {
       style: 'currency',
@@ -15,9 +16,17 @@ export default function EarningSummary({ summary }: EarningSummaryProps) {
   const isPositiveGrowth = summary.growthRate > 0;
 
   return (
-    <div className="card mb-8">
+    <div 
+      className="card mb-8 cursor-pointer hover:shadow-md transition-shadow duration-200"
+      onClick={onShowDetails}
+    >
       <div className="text-center">
-        <h2 className="text-lg font-semibold text-gray-700 mb-2">今月の成果サマリ</h2>
+        <div className="flex items-center justify-between mb-2 text-left">
+          <h2 className="text-lg font-semibold text-gray-700">今月の成果サマリ</h2>
+                      <button className="text-air-primary hover:text-air-dark text-xs font-medium">
+            詳細を見る →
+          </button>
+        </div>
         <div className="text-4xl font-bold text-air-primary mb-4">
           {formatCurrency(summary.monthlyEarnings)}
         </div>

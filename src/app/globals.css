@@ -18,7 +18,7 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-sm border border-gray-border p-4 md:p-6;
+    @apply bg-white rounded-lg shadow-sm border border-gray-border p-3;
   }
   
   .sidebar-item {
@@ -35,40 +35,24 @@
   
   .select-field {
     @apply w-full px-3 py-2 border border-gray-border rounded-lg focus:outline-none focus:ring-2 focus:ring-air-primary focus:border-transparent bg-white;
+    max-width: 100%;
+    font-size: 16px; /* iOSでズームを防ぐ */
   }
 
-  /* モバイル向けスタイル */
+  /* モバイルでのselect要素の調整 */
   @media (max-width: 768px) {
-    .mobile-sidebar {
-      @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-border z-50 px-4 py-2;
-    }
-    
-    .mobile-sidebar-item {
-      @apply flex flex-col items-center justify-center text-xs text-gray-600 py-2 px-1;
-    }
-    
-    .mobile-sidebar-item.active {
-      @apply text-air-primary;
-    }
-    
-    .desktop-sidebar {
-      @apply hidden;
-    }
-    
-    .mobile-main {
-      @apply pb-20;
+    .select-field {
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
     }
   }
 
-  @media (min-width: 769px) {
-    .mobile-sidebar {
-      @apply hidden;
-    }
-    
-    .desktop-sidebar {
-      @apply block;
-    }
-  }
+  /* モバイルファーストのスタイル */
 }
 
 @layer utilities {
@@ -77,5 +61,24 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+  }
+
+  /* グリッド表示の調整 */
+  @media (max-width: 640px) {
+    .grid-cols-2 {
+      gap: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-cols-2 {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 } 

@@ -37,11 +37,11 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
     <div className="card mb-8">
       <h2 className="text-lg font-semibold text-gray-900 mb-4">商品を探す</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 mb-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">地域</label>
           <select 
-            className="select-field"
+            className="select-field text-base"
             value={filters.region}
             onChange={(e) => handleInputChange('region', e.target.value)}
           >
@@ -54,7 +54,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">商材</label>
           <select 
-            className="select-field"
+            className="select-field text-base"
             value={filters.category}
             onChange={(e) => handleInputChange('category', e.target.value)}
           >
@@ -67,7 +67,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">対象層</label>
           <select 
-            className="select-field"
+            className="select-field text-base"
             value={filters.targetAudience}
             onChange={(e) => handleInputChange('targetAudience', e.target.value)}
           >

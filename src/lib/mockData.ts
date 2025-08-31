@@ -15,6 +15,7 @@ export const mockProducts: Product[] = [
     purchaseCount: 23,
     conversionRate: 14.7,
     purchaseRate: 8.2,
+    commission: 1200,
     targetDemographics: '30-50代女性',
   },
   {
@@ -25,6 +26,7 @@ export const mockProducts: Product[] = [
     purchaseCount: 12,
     conversionRate: 13.5,
     purchaseRate: 6.1,
+    commission: 3500,
     targetDemographics: '20-40代女性',
   },
   {
@@ -35,7 +37,19 @@ export const mockProducts: Product[] = [
     purchaseCount: 31,
     conversionRate: 15.3,
     purchaseRate: 9.4,
+    commission: 2800,
     targetDemographics: '25-45代女性',
+  },
+  {
+    id: '4',
+    name: 'ナチュラル スキンケアセット',
+    image: '/images/skincare.jpg',
+    clickCount: 134,
+    purchaseCount: 18,
+    conversionRate: 13.4,
+    purchaseRate: 7.1,
+    commission: 2200,
+    targetDemographics: '20-40代女性',
   },
 ];
 

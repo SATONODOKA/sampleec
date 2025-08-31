@@ -15,11 +15,11 @@ const reasonLabels = {
 export default function RecommendedProductCard({ product, onSelect }: RecommendedProductCardProps) {
   return (
     <div 
-      className="card min-w-[280px] cursor-pointer hover:shadow-md transition-shadow duration-200"
+      className="card min-w-[240px] cursor-pointer hover:shadow-md transition-shadow duration-200"
       onClick={() => onSelect(product)}
     >
       <div className="relative">
-        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-4">
+        <div className="w-full h-28 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-3">
           🎁
         </div>
         <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-sm">
@@ -29,20 +29,20 @@ export default function RecommendedProductCard({ product, onSelect }: Recommende
       
       <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
       
-      <div className="flex items-center justify-between">
-        <span className="text-xs text-air-primary bg-air-light px-2 py-1 rounded-full">
-          {reasonLabels[product.recommendationReason]}
-        </span>
-        <button 
-          onClick={(e) => {
-            e.stopPropagation();
-            onSelect(product);
-          }}
-          className="text-sm text-air-primary hover:text-air-dark font-medium"
-        >
-          詳細 →
-        </button>
-      </div>
+              <div className="flex items-center justify-between">
+          <span className="text-xs text-white bg-air-primary px-3 py-1 rounded-full font-medium shadow-sm">
+            {reasonLabels[product.recommendationReason]}
+          </span>
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect(product);
+            }}
+            className="text-sm text-air-primary hover:text-air-dark font-medium"
+          >
+            詳細 →
+          </button>
+        </div>
     </div>
   );
 } 

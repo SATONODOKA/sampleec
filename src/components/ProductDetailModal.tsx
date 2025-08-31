@@ -13,8 +13,8 @@ export default function ProductDetailModal({ product, isOpen, onClose }: Product
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-6">
+      <div className="bg-white rounded-lg max-w-sm w-full max-h-[85vh] overflow-y-auto">
+        <div className="p-4">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-gray-900">詳細分析レポート</h2>
             <button
@@ -32,8 +32,9 @@ export default function ProductDetailModal({ product, isOpen, onClose }: Product
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="card">
+          {/* パフォーマンス指標 */}
+          <div className="mb-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
               <h4 className="font-semibold text-gray-700 mb-4">パフォーマンス指標</h4>
               <div className="space-y-3">
                 <div className="flex justify-between">
@@ -54,45 +55,48 @@ export default function ProductDetailModal({ product, isOpen, onClose }: Product
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="card">
+          {/* 購入者属性 */}
+          <div className="mb-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
               <h4 className="font-semibold text-gray-700 mb-4">購入者属性</h4>
               <div className="space-y-4">
                 <div>
-                  <span className="text-sm text-gray-600 block mb-2">年代別</span>
-                  <div className="space-y-2">
+                  <span className="text-sm text-gray-600 block mb-3">年代別</span>
+                  <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-sm">20-30代</span>
                       <div className="flex items-center space-x-2">
-                        <div className="w-20 bg-gray-200 rounded-full h-2">
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div className="bg-air-primary h-2 rounded-full" style={{width: '45%'}}></div>
                         </div>
-                        <span className="text-xs text-gray-600">45%</span>
+                        <span className="text-xs text-gray-600 w-8 text-right">45%</span>
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">30-40代</span>
                       <div className="flex items-center space-x-2">
-                        <div className="w-20 bg-gray-200 rounded-full h-2">
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div className="bg-air-primary h-2 rounded-full" style={{width: '35%'}}></div>
                         </div>
-                        <span className="text-xs text-gray-600">35%</span>
+                        <span className="text-xs text-gray-600 w-8 text-right">35%</span>
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">40代以上</span>
                       <div className="flex items-center space-x-2">
-                        <div className="w-20 bg-gray-200 rounded-full h-2">
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div className="bg-air-primary h-2 rounded-full" style={{width: '20%'}}></div>
                         </div>
-                        <span className="text-xs text-gray-600">20%</span>
+                        <span className="text-xs text-gray-600 w-8 text-right">20%</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <span className="text-sm text-gray-600 block mb-2">性別</span>
-                  <div className="flex space-x-4">
+                  <span className="text-sm text-gray-600 block mb-3">性別</span>
+                  <div className="flex space-x-6">
                     <div className="flex items-center space-x-2">
                       <div className="w-4 h-4 bg-air-primary rounded"></div>
                       <span className="text-sm">女性 (78%)</span>
