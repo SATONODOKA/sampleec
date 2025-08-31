@@ -98,8 +98,21 @@ export default function RecommendedProductDetailModal({ product, isOpen, onClose
 
           {/* 商品基本情報 */}
           <div className="mb-6">
-            <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-4">
-              🎁
+            <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden mb-4">
+              <img 
+                src={product.image} 
+                alt={product.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // 画像読み込みエラー時のフォールバック
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-500" style={{display: 'none'}}>
+                🎁
+              </div>
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{details.description}</p>

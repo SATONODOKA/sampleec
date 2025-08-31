@@ -10,7 +10,7 @@ export const mockProducts: Product[] = [
   {
     id: '1',
     name: 'オーガニック コーヒー豆 (500g)',
-    image: '/images/coffee.jpg',
+    image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop&crop=center',
     clickCount: 156,
     purchaseCount: 23,
     conversionRate: 14.7,
@@ -21,7 +21,7 @@ export const mockProducts: Product[] = [
   {
     id: '2',
     name: 'ハンドメイド レザーバッグ',
-    image: '/images/bag.jpg',
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop&crop=center',
     clickCount: 89,
     purchaseCount: 12,
     conversionRate: 13.5,
@@ -32,7 +32,7 @@ export const mockProducts: Product[] = [
   {
     id: '3',
     name: 'アロマディフューザー セット',
-    image: '/images/aroma.jpg',
+    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop&crop=center',
     clickCount: 203,
     purchaseCount: 31,
     conversionRate: 15.3,
@@ -43,7 +43,7 @@ export const mockProducts: Product[] = [
   {
     id: '4',
     name: 'ナチュラル スキンケアセット',
-    image: '/images/skincare.jpg',
+    image: 'https://images.unsplash.com/photo-1556228578-dd6e4c96f336?w=400&h=300&fit=crop&crop=center',
     clickCount: 134,
     purchaseCount: 18,
     conversionRate: 13.4,
@@ -74,28 +74,28 @@ export const mockRecommendedProducts: RecommendedProduct[] = [
   {
     id: 'r1',
     name: 'プレミアム グリーンティー',
-    image: '/images/tea.jpg',
+    image: 'https://images.unsplash.com/photo-1564890114935-7c73fb4d585c?w=400&h=300&fit=crop&crop=center',
     recommendationReason: 'nearby_popular',
     reasonIcon: '📍',
   },
   {
     id: 'r2',
     name: 'エコフレンドリー タンブラー',
-    image: '/images/tumbler.jpg',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center',
     recommendationReason: 'industry_popular',
     reasonIcon: '🔥',
   },
   {
     id: 'r3',
     name: 'ナチュラル スキンケアセット',
-    image: '/images/skincare.jpg',
+    image: 'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&h=300&fit=crop&crop=center',
     recommendationReason: 'similar_past',
     reasonIcon: '⭐',
   },
   {
     id: 'r4',
     name: 'オーガニック ハチミツ',
-    image: '/images/honey.jpg',
+    image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=300&fit=crop&crop=center',
     recommendationReason: 'new_arrival',
     reasonIcon: '🆕',
   },

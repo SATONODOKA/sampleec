@@ -19,8 +19,21 @@ export default function RecommendedProductCard({ product, onSelect }: Recommende
       onClick={() => onSelect(product)}
     >
       <div className="relative">
-        <div className="w-full h-28 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-3">
-          🎁
+        <div className="w-full h-28 bg-gray-200 rounded-lg overflow-hidden mb-3">
+          <img 
+            src={product.image} 
+            alt={product.name}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              // 画像読み込みエラー時のフォールバック
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-500" style={{display: 'none'}}>
+            🎁
+          </div>
         </div>
         <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-sm">
           <span className="text-lg">{product.reasonIcon}</span>

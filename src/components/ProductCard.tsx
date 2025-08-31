@@ -36,8 +36,21 @@ export default function ProductCard({ product, onOrder, onDelete, onShowDetails 
       onClick={() => onShowDetails(product)}
     >
       {/* 商品画像エリア */}
-      <div className="w-full h-20 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-2">
-        📦
+      <div className="w-full h-20 bg-gray-200 rounded-lg overflow-hidden mb-2">
+        <img 
+          src={product.image} 
+          alt={product.name}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            // 画像読み込みエラー時のフォールバック
+            e.currentTarget.style.display = 'none';
+            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+            if (fallback) fallback.style.display = 'flex';
+          }}
+        />
+        <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-500" style={{display: 'none'}}>
+          📦
+        </div>
       </div>
 
       {/* 商品情報 */}
